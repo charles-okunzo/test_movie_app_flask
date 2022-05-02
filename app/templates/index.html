@@ -8,8 +8,16 @@
 
 
 {% block content %}
-  <h1>{{message}}</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptates nobis est sint molestias incidunt neque voluptate quasi soluta aperiam!</p>
+
+    <div class="container">
+        <form>
+            <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+            <input type="submit"  value="Submit" class="btn btn-default">
+        </form>
+
+    </div>
+  <!-- <h1>{{message}}</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptates nobis est sint molestias incidunt neque voluptate quasi soluta aperiam!</p> -->
   
   <!-- Popular movie -->
   <h3> Popular Movies</h3>
