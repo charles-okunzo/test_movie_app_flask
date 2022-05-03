@@ -1,9 +1,9 @@
 import unittest
-from movie import Movie
+from app.models import Movie
 
 # Movie = movie.Movie
 
-class MovieTest(unittest.TestCase):
+class TestMovie(unittest.TestCase):
   '''
   Test class to test behavior of movie class
   '''
@@ -15,7 +15,3 @@ class MovieTest(unittest.TestCase):
 
   def test_instance(self):
     self.assertTrue(isinstance(self.new_movie, Movie))
-
-
-if __name__ == '__main__':
-  unittest.main()

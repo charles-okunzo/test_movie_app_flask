@@ -1,10 +1,10 @@
 from flask import render_template, request, redirect, url_for
-from app import app
-from app.request import get_movies, get_movie,search_movie
+from . import main
+from ..request import get_movies, get_movie,search_movie
 
 #Views
 
-@app.route('/')
+@main.route('/')
 def index():
   '''
   View root page function that returns root page and its data
@@ -18,11 +18,11 @@ def index():
   search_movie = request.args.get("movie_query")
 
   if search_movie:
-    return redirect(url_for("search", movie_name = search_movie))
+    return redirect(url_for("main.search", movie_name = search_movie))
   else:
     return render_template('index.html', message = message, title = title, popular = popular_movies, upcoming = upcoming_movies, now_showing = now_showing_movie)
 
-@app.route('/movie/<int:id>')
+@main.route('/movie/<int:id>')
 def movie(id):
 
     '''
@@ -34,7 +34,7 @@ def movie(id):
     return render_template('movie.html',title = title,movie = movie)
 
 
-@app.route('/search/<movie_name>')
+@main.route('/search/<movie_name>')
 def search(movie_name):
     '''
     View function to display the search results
